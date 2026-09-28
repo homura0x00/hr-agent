@@ -9,7 +9,7 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
-import {Button} from "@heroui/react";
+import React from "react";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -24,16 +24,24 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
+/**
+ * Applies the persisted theme before the first paint. `useTheme` writes the theme
+ * class in a layout effect, which runs after hydration and would otherwise cause a
+ * flash of the light theme for users who chose dark.
+ */
+const THEME_INIT_SCRIPT = `(function(){try{var stored=localStorage.getItem("heroui-theme")||"system";var resolved=stored==="system"?(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"):stored;document.documentElement.classList.add(resolved);document.documentElement.setAttribute("data-theme",resolved);}catch(e){}})();`;
+
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-background text-foreground">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="font-sans antialiased">
         {children}
         <ScrollRestoration />
         <Scripts />

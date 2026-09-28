@@ -1,17 +1,24 @@
 @import "tailwindcss";
 @import "@heroui/styles";
 
-/*@theme {*/
-/*  --font-sans:*/
-/*    "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",*/
-/*    "Segoe UI Symbol", "Noto Color Emoji";*/
-/*}*/
+/*
+ * The root layout loads Inter from Google Fonts; wire it into Tailwind's
+ * `font-sans` token so `font-sans` on <body> picks it up.
+ */
+@theme {
+  --font-sans:
+    "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+}
 
-/*html,*/
-/*body {*/
-/*  @apply bg-white dark:bg-gray-950;*/
+/*
+ * HeroUI's `.dark` class drives its token overrides, so keep the native form
+ * controls and scrollbars in step with the active theme.
+ */
+html {
+  color-scheme: light;
+}
 
-/*  @media (prefers-color-scheme: dark) {*/
-/*    color-scheme: dark;*/
-/*  }*/
-/*}*/
+html.dark {
+  color-scheme: dark;
+}
