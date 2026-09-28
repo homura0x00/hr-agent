@@ -24,14 +24,14 @@ export type NavItem = {
 
 /** Main navigation, rendered in the sidebar's scrollable content area. */
 export const PRIMARY_NAV: NavItem[] = [
-  { href: "/dashboard", label: "Dashboard", icon: LayoutDashboardIcon, end: true },
-  { href: "/dashboard/orders", label: "Orders", icon: ShoppingCartIcon },
-  { href: "/dashboard/tracker", label: "Tracker", icon: ActivityIcon, badge: "new" },
-  { href: "/dashboard/analytics", label: "Analytics", icon: ChartColumnIcon },
-  { href: "/dashboard/settings", label: "Settings", icon: SettingsIcon },
+  { href: "/", label: "Dashboard", icon: LayoutDashboardIcon, end: true },
+  { href: "/orders", label: "Orders", icon: ShoppingCartIcon },
+  { href: "/tracker", label: "Tracker", icon: ActivityIcon, badge: "new" },
+  { href: "/analytics", label: "Analytics", icon: ChartColumnIcon },
+  { href: "/settings", label: "Settings", icon: SettingsIcon },
 ];
 
 /** Secondary navigation, pinned to the sidebar footer. */
 export const SECONDARY_NAV: NavItem[] = [
-  { href: "/dashboard/help", label: "Help & Information", icon: HelpCircleIcon },
+  { href: "/help", label: "Help & Information", icon: HelpCircleIcon },
 ];

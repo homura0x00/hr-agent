@@ -84,7 +84,7 @@ export function AppSidebar() {
               isDanger
               onPress={() => {
                 // Replace with a real sign-out once auth is wired up.
-                window.location.assign("/");
+                window.location.assign("/login");
               }}
             />
           </SidebarMenu>
