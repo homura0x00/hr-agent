@@ -258,7 +258,7 @@ function EmployeesSection() {
                       : column.label}
                   </Table.Column>
                 ))}
-                <Table.Column id="actions">Actions</Table.Column>
+                <Table.Column id="actions" className="flex justify-end">Actions</Table.Column>
               </Table.Header>
 
               <Table.Body>
