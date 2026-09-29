@@ -1,6 +1,8 @@
-# 人力资源 HR Assistant
+# 企业招聘管理平台（施工中）
 
-用于人力资源管理的辅助型AI助手，覆盖简历解析、人岗匹配、智能对话、面试辅助、数据分析。
+- Version: 0.1.0
+
+用于企业人力资源管理的AI辅助型平台，覆盖简历解析、人岗匹配、智能对话、面试辅助、数据分析。通过规则过滤+AI辅助匹配的形式配合HR高效完成
 
 ## 流程
 
@@ -10,18 +12,17 @@ Web 投递 → 简历解析 → 规则机筛 → AI 精评 → HR 审核
 
 ## 技术栈
 
-- 编排：LangGraph
 - 后端：FastAPI + SQLModel
-- 数据库：Supabase (PostgreSQL)
+- 数据库：PostgreSQL
 - 解析：PyMuPDF / PaddleOCR
-- LLM：Claude / GPT-4o
-- 前端：Next.js
+- LLM：DeepSeek-V4-Flash + LangGraph
+- 前端：React-Router
 
 
 ## 核心设计
 
 - 分级解析：电子版用 PyMuPDF，扫描件用 OCR，复杂版面才上视觉模型
-- 分层筛选：规则引擎先淘汰 70%，LLM 只评剩余 30%
+- 分层筛选：规则引擎先筛选硬指标，LLM 只评剩余 30%
 - 非阻塞审核：LangGraph interrupt + checkpointer，HR 随时审、不卡流程
 - 确定性计算不进 LLM 循环：解析、过滤写成固定节点，省 token
 
