@@ -16,7 +16,7 @@ Web 投递 → 简历解析 → 规则机筛 → AI 精评 → HR 审核
 - 数据库：PostgreSQL
 - 解析：PyMuPDF / PaddleOCR
 - LLM：DeepSeek-V4-Flash + LangGraph
-- 前端：React-Router
+- 前端：React-Router + heroUI
 
 
 ## 核心设计
