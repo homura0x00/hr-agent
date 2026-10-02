@@ -22,7 +22,7 @@ import {
 import type { DashboardHandle } from "~/layouts/dashboard-layout";
 import { selectionToKeys } from "~/lib/selection";
 
-export const handle: DashboardHandle = { navbarTitle: "Orders" };
+export const handle: DashboardHandle = { navbarTitle: "Employee" };
 
 type StatusFilter = OrderStatus | "all";
 

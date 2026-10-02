@@ -9,6 +9,7 @@ import {
   ShoppingCartIcon,
   type IconProps,
 } from "~/components/icons";
+import {UserIcon} from "@heroicons/react/16/solid";
 
 /** Trailing badge shown next to a nav label while the sidebar is expanded. */
 export type NavBadge = "new";
@@ -25,7 +26,7 @@ export type NavItem = {
 /** Main navigation, rendered in the sidebar's scrollable content area. */
 export const PRIMARY_NAV: NavItem[] = [
   { href: "/", label: "Dashboard", icon: LayoutDashboardIcon, end: true },
-  { href: "/orders", label: "Orders", icon: ShoppingCartIcon },
+  { href: "/employee", label: "Employee", icon: UserIcon },
   { href: "/tracker", label: "Tracker", icon: ActivityIcon, badge: "new" },
   { href: "/analytics", label: "Analytics", icon: ChartColumnIcon },
   { href: "/settings", label: "Settings", icon: SettingsIcon },
